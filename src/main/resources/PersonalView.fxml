@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane fx:id="view" hgap="5.0" minHeight="30.0" prefHeight="480.0" prefWidth="640.0" vgap="5.0" xmlns="http://javafx.com/javafx/11.0.0" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="479.0" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="95.0" minWidth="-Infinity" prefWidth="25.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="60.0" percentHeight="0.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" />
+      <RowConstraints minHeight="160.0" prefHeight="30.0" vgrow="ALWAYS" />
+   </rowConstraints>
+   <children>
+      <Label text="Identificación: " GridPane.valignment="CENTER" />
+      <Label text="Nombre: " GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Label text="Apellidos: " GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <Label text="Fecha de nacimiento: " GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <Label text="Dirección: " GridPane.rowIndex="4" GridPane.valignment="BASELINE" />
+      <Label text="Código Postal: " GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+      <Label text="Localidad: " GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Label text="País: " GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+      <Label text="Nacionalidades: " GridPane.rowIndex="8" GridPane.valignment="BASELINE">
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="identificacionTF" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+      <TextField fx:id="nombreTF" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField fx:id="apellidosTF" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <DatePicker fx:id="fechaNacimientoDP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextArea fx:id="direccionTA" prefHeight="60.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+      <TextField fx:id="codigoPostalTF" maxWidth="100.0" prefHeight="25.0" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="localidadTF" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <ComboBox fx:id="paisCB" prefWidth="150.0" promptText="Seleccione un país" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <ListView fx:id="nacionalidadesLV" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin></ListView>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+         <children>
+            <Button fx:id="nuevaNacionalidadB" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNuevaNacionalidadBAction" text="+">
+               <tooltip>
+                  <Tooltip text="Añadir nacionalidad" />
+               </tooltip>
+            </Button>
+            <Button fx:id="borrarNacionalidadB" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBorrarNacionalidadBAction" text="-">
+               <tooltip>
+                  <Tooltip text="Borrar nacionalidad" />
+               </tooltip>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

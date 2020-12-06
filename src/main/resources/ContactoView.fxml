@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane fx:id="view" dividerPositions="0.33, 0.66" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" xmlns="http://javafx.com/javafx/11.0.0" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="300.0" text="Teléfonos">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <TableView fx:id="telefonosTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="500.0" prefHeight="50.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="numeroColumn" prefWidth="200.0" text="Numero" />
+                      <TableColumn fx:id="tipoColumn" prefWidth="200.0" text="Tipo" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox prefHeight="50.0">
+                     <children>
+                        <Button maxHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onAñadirTelefono" text="Añadir" />
+                        <Button fx:id="eliminarTelefonoB" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onEliminarTelefono" text="Eliminar" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="300.0" text="Direcciones de correo">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <TableView fx:id="correoTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="500.0" prefHeight="50.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="emailColumn" prefWidth="500.0" text="E-mail" />
+                     </columns>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox prefHeight="50.0">
+                     <children>
+                        <Button maxHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onAñadirCorreo" text="Añadir" />
+                        <Button fx:id="eliminarCorreoB" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onEliminarCorreo" text="Eliminar" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="300.0" text="Webs">
+         <content>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <TableView fx:id="webTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="500.0" prefHeight="50.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="urlColumn" prefWidth="500.0" text="URL" />
+                     </columns>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox prefHeight="50.0">
+                     <children>
+                        <Button maxHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onAñadirWeb" text="Añadir" />
+                        <Button fx:id="eliminarWebB" maxWidth="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#onEliminarWeb" text="Eliminar" />
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </content>
+      </TitledPane>
+   </items>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</SplitPane>
