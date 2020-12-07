@@ -14,10 +14,10 @@ public class App extends Application{
 		
 		controller=new MainController();
 		
-		Scene scene=new Scene(controller.getView(),1000,800);
+		Scene scene=new Scene(controller.getView(),720,600);
 		
 		primaryStage.setScene(scene);
-		primaryStage.setTitle("MiCV");
+		primaryStage.setTitle("Mi CV");
 		primaryStage.getIcons().add(new Image("images/cv64x64.png"));
 		primaryStage.show();
 		

@@ -98,13 +98,13 @@ public class ExperienciaController implements Initializable {
 	@FXML
     private void onAñadir(ActionEvent event) {
     	try {
-    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/addExperienciaView.fxml"));
+    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/addExperienciaView.fxml"));
     		loader.setController(this);
         	
     		Parent root1=(Parent)loader.load();
         	stageExperiencia=new Stage();
     		stageExperiencia.setTitle("Añadir Experiencia");
-    		//Las dos siguientes líneas evitan que se pueda clickar en la ventana padre mientras esta está abierta
+    		//Evitar poder tocar el stage principal mientras se añade experiencia
     		stageExperiencia.initModality(Modality.WINDOW_MODAL);
     		stageExperiencia.initOwner(view.getScene().getWindow());
     		stageExperiencia.setScene(new Scene(root1));

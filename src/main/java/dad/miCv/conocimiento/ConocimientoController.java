@@ -105,11 +105,12 @@ public class ConocimientoController implements Initializable {
     void onAñadirConocimiento(ActionEvent event) {
 
     	try {
-    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/addConocimientoView.fxml"));
+    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/addConocimientoView.fxml"));
     		loader.setController(this);
     		Parent root1=(Parent)loader.load();
     		stageConocimientoIdioma=new Stage();
     		stageConocimientoIdioma.setTitle("Añadir Conocimiento");
+    		//Evitar que se toque el stage principal mientras añado conocimiento
     		stageConocimientoIdioma.initModality(Modality.WINDOW_MODAL);
     		stageConocimientoIdioma.initOwner(view.getScene().getWindow());
     		stageConocimientoIdioma.setScene(new Scene(root1));
@@ -121,11 +122,12 @@ public class ConocimientoController implements Initializable {
     @FXML
     void onAñadirIdioma(ActionEvent event) {
     	try {
-    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/addIdiomaView.fxml"));
+    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/addIdiomaView.fxml"));
     		loader.setController(this);
     		Parent root1=(Parent)loader.load();
     		stageConocimientoIdioma=new Stage();
     		stageConocimientoIdioma.setTitle("Añadir idioma");
+    		//Evitar que se toque el stage principal mientras añado conocimiento
     		stageConocimientoIdioma.initModality(Modality.WINDOW_MODAL);
     		stageConocimientoIdioma.initOwner(view.getScene().getWindow());
     		stageConocimientoIdioma.setScene(new Scene(root1));

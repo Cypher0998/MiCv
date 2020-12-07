@@ -97,13 +97,13 @@ public class FormacionController implements Initializable {
     private void onAñadir(ActionEvent event) {
     	try {
     		
-    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/addFormacionView.fxml"));
+    		FXMLLoader loader=new FXMLLoader(getClass().getResource("/addFormacionView.fxml"));
     		loader.setController(this);
         	
     		Parent root1=(Parent)loader.load();
         	stageFormacion=new Stage();
     		stageFormacion.setTitle("Añadir Formación");
-    		//Las dos siguientes líneas evitan que se pueda clickar en la ventana padre mientras esta está abierta
+    		//Evitar que se pueda clicar en el stage principal cuando añades informacion
     		stageFormacion.initModality(Modality.WINDOW_MODAL);
     		stageFormacion.initOwner(view.getScene().getWindow());
     		stageFormacion.setScene(new Scene(root1));
@@ -127,8 +127,8 @@ public class FormacionController implements Initializable {
     	alert.initModality(Modality.APPLICATION_MODAL);
     	alert.initOwner(stage);
     	alert.setTitle("Eliminar formación");
-    	alert.setHeaderText("Va a borrar la formación");
-    	alert.setContentText("¿Está seguro de que quiere borrarla?");
+    	alert.setHeaderText("¿Está usted seguro?");
+    	alert.setContentText("¿Desea borrar esta formación?");
     	
     	Optional<ButtonType>resultado=alert.showAndWait();
     	if(resultado.get()==ButtonType.OK)
@@ -170,9 +170,9 @@ public class FormacionController implements Initializable {
     	Alert alert=new Alert(AlertType.INFORMATION);	
     	alert.initModality(Modality.APPLICATION_MODAL);
     	alert.initOwner(stage);
-    	alert.setTitle("El formulario no esta completo");
+    	alert.setTitle("Formulario Incompleto");
     	alert.setHeaderText("Error al intentar introducir una nueva formación");
-    	alert.setContentText("Debe rellenar todos los campos");
+    	alert.setContentText("Todos los campos deben estar rellenos.");
     	alert.showAndWait();
     }
 

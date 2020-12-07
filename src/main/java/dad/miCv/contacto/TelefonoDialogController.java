@@ -49,7 +49,7 @@ public class TelefonoDialogController extends Dialog<Telefono> implements Initia
 		stage.getIcons().add(new Image("/images/cv64x64.png"));
 		
 		añadirCB.getItems().addAll(TipoTelefono.values());
-		setTitle("Nuevo teléfono");
+		setTitle("Añadir número de teléfono");
 		setHeaderText("Introduzca el nuevo número de teléfono.");
 		getDialogPane().setContent(view);
 		getDialogPane().getButtonTypes().addAll(new ButtonType("Añadir",ButtonData.OK_DONE),ButtonType.CANCEL);
@@ -83,9 +83,9 @@ public class TelefonoDialogController extends Dialog<Telefono> implements Initia
     	Alert alert=new Alert(AlertType.INFORMATION);	
     	alert.initModality(Modality.APPLICATION_MODAL);
     	alert.initOwner(stage);
-    	alert.setTitle("El formulario no esta completo");
+    	alert.setTitle("Formulario Incompleto");
     	alert.setHeaderText("Error al intentar introducir un nuevo telefono");
-    	alert.setContentText("Debe rellenar todos los campos");
+    	alert.setContentText("Todos los campos deben estar rellenos");
     	alert.showAndWait();
 	}
     
